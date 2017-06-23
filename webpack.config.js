@@ -3,6 +3,7 @@
  */
 var path = require('path');
 var webpack = require('webpack')
+var HelloWorldPlugin = require('./plugin/hello-world');
 const config = {
   devtool: "source-map",
   entry: './src/index.js',
@@ -34,7 +35,8 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HelloWorldPlugin({options: true})
   ],
 };
 const devConfig = () => {
