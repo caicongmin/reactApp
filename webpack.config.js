@@ -2,7 +2,7 @@
  * Created by ccm on 2017/6/23.
  */
 var path = require('path');
-var webpack = require('webpack')
+var webpack = require('webpack');
 var HelloWorldPlugin = require('./plugin/hello-world');
 const config = {
   devtool: "source-map",
@@ -10,6 +10,13 @@ const config = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
+  },
+  resolve: {
+    // resolve.extensions import时可以不写文件扩展名
+    extensions: ['.js', '.jsx'],
+    alias: {
+      src: path.resolve(__dirname, "./src/")
+    }
   },
   module: {
     rules: [
@@ -31,6 +38,13 @@ const config = {
         use: [
           'file-loader'
         ]
+      },
+      {
+        test: /\.js|jsx$/,
+        use: [
+          'babel-loader'
+        ],
+        include: ["src"]
       }
     ]
   },
