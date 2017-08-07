@@ -9,7 +9,7 @@ import Library from './library'
 function component() {
     var element = document.createElement('div');
 
-    element.innerHTML = _.join(['hello', 'webpack'], ' @@@@@@@@@@@@');
+    element.innerHTML = _.join(['hello', 'webpack'], ' 11111111111111');
     element.classList.add('hello');
 
     var myIcon = new Image();

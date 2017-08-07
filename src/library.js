@@ -3,6 +3,6 @@
  */
 export default {
   log() {
-    console.log('Initial log ..2.');
+    console.log('Initial log ..3.');
   }
 }
